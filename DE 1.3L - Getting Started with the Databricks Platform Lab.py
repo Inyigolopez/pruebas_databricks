@@ -182,6 +182,13 @@ display(example_df)
 
 # COMMAND ----------
 
+def replace(text: str, old: str, new: str) -> str:
+  return text.replace(old, new)
+
+replaceUDF = udf(replace)
+
+# COMMAND ----------
+
 # MAGIC %sql
 # MAGIC SELECT * FROM delta.`/databricks-datasets/nyctaxi-with-zipcodes/subsampled`
 
